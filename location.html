@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title>
+     <link rel="stylesheet" href="styles.css"> <!-- Add this line to reference the CSS file -->
+    <style>
+        /* Add your CSS styles here */
+        #map-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start; /* Align items to the top */
+        }
+
+        #directions {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Queens of Soul Logo" class="logo"> <!-- Add the logo here -->
+        <h1>Location</h1>
+        <nav>
+            <ul>
+                <li><a href="home page.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="location.html">Location</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="map-container">
+            <div id="directions">
+                <p><strong>Directions from Foggy Bottom Metro Station:</strong></p>
+                <ol>
+                    <li>Exit the Foggy Bottom Metro Station and head southwest on 23rd St NW toward I St NW.</li>
+                    <li>Turn right onto I St NW.</li>
+                    <li>Turn left onto 21st St NW.</li>
+                    <li>Continue on 21st St NW until you reach your destination at 800 21st St NW.</li>
+                </ol>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.0426203029447!2d-77.04940468830691!3d38.90014067160563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7b0f1074fe5%3A0xd7302beaa4e61dfb!2s800%2021st%20St%20NW%2C%20Washington%2C%20DC%2020052!5e0!3m2!1sen!2sus!4v1712517653479!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Queens of Soul</p>
+    </footer>
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            // The location
+            var queensOfSoul = { lat: 38.9005, lng: -77.0475 };
+            // The map, centered at Queens of Soul
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: queensOfSoul,
+            });
+            // The marker, positioned at Queens of Soul
+            var marker = new google.maps.Marker({
+                position: queensOfSoul,
+                map: map,
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="script.js"></script>
+</body>
+</html>
